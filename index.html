@@ -8,17 +8,40 @@
         content="Hire Jamal Ahmed, a professional Mathematics teacher specializing in personalized tutoring and effective teaching methods.">
     <meta name="keywords" content="Math teacher, Jamal Ahmed, hire, contact, education, coaching">
     <meta name="author" content="Jamal Ahmed">
+    <meta name="robots" content="index, follow">
+    <meta name="robots" content="noarchive">
+    <meta name="robots" content="nosnippet">
+
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="JamalMadMaths - Professional Mathematics Teacher">
     <meta property="og:description"
         content="Hire Jamal Ahmed, a professional Mathematics teacher specializing in personalized tutoring and effective teaching methods.">
     <meta property="og:image" content="/assets/jamalsir.png">
     <meta property="og:url" content="https://jamalmadmaths.netlify.app">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="JamalMadMaths - Professional Mathematics Teacher">
     <meta name="twitter:description"
         content="Hire Jamal Ahmed, a professional Mathematics teacher specializing in personalized tutoring and effective teaching methods.">
     <meta name="twitter:image" content="/assets/jamalsir.png">
+
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; img-src 'self' data: https://assets.jamalmadmaths.netlify.app; connect-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; frame-src https://www.youtube-nocookie.com;">
+
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+
     <title>JamalMadMaths - Professional Mathematics Teacher</title>
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://stackpath.bootstrapcdn.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -26,11 +49,21 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="assets/style.css">
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Favicons -->
+    <link rel="icon" href="assets/favicon_io/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="assets/favicon_io/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="assets/favicon_io/android-chrome-192x192.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="assets/favicon_io/android-chrome-512x512.png" sizes="512x512" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
 </head>
 
 <body>
@@ -131,7 +164,12 @@
                 </ul>
             </div>
             <div class="contact-form">
-                <form action="/submit" method="post">
+                <form action="https://formsubmit.co/Er.jamal.khan@gmail.com" method="POST">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_subject" value="JamalMadMaths: New Submission!">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://jamalmadmaths.netlify.app/assets/success.html">
+
                     <div class="form-group">
                         <label for="name"><i class="fas fa-user"></i> Name</label>
                         <input type="text" id="name" name="name" required>
@@ -150,18 +188,20 @@
         </div>
     </section>
 
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-info">
-                <p>&copy; 2024 Jamal Mad Maths. All rights reserved. <a href="#privacy-policy">Privacy Policy</a></p>
+                <p>&copy; 2024 Jamal Mad Maths. All rights reserved.</p>
             </div>
             <div class="footer-branding">
-                <p>Made with <span class="heart">❤️</span> by <a href="https://ellowdigitals.com" target="_blank"
-                        rel="noopener noreferrer">Ellowdigitals</a></p>
+                <p>Made with <span class="heart">❤️</span> by <a href="https://ellowdigitals.netlify.app/"
+                        target="_blank" rel="noopener noreferrer">Ellowdigitals</a></p>
             </div>
         </div>
     </footer>
+
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
