@@ -15,7 +15,6 @@ body {
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
-    /* Prevent horizontal scroll */
 }
 
 /* Preloader Styles */
@@ -26,9 +25,7 @@ body {
     width: 100%;
     height: 100%;
     background: #fff;
-    /* or any background color */
     z-index: 9999;
-    /* Make sure it's on top of other elements */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -173,7 +170,6 @@ header {
     font-size: 1.8rem;
     margin-bottom: 20px;
     color: #ffeb3b;
-    /* Using a specific color for better consistency */
     font-weight: 300;
 }
 
@@ -380,7 +376,6 @@ h2 {
     text-align: center;
 }
 
-/* Container for the about section */
 .about-box {
     display: flex;
     flex-direction: column;
@@ -394,7 +389,6 @@ h2 {
     background-color: #fff;
 }
 
-/* Text styling within the about section */
 .about-text {
     max-width: 600px;
     font-size: 1.125rem;
@@ -523,7 +517,6 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Centers the heading horizontally */
     font-size: clamp(1.6rem, 4vw, 2rem);
     color: #333;
     margin-bottom: 20px;
@@ -546,7 +539,6 @@ h2 {
     padding: 20px;
     border-radius: 12px;
     flex: 1 1 calc(33.333% - 40px);
-    /* Adjust for gap */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 400px;
@@ -583,13 +575,11 @@ h2 {
 #video-demo iframe {
     width: 100%;
     max-width: 800px;
-    /* Restricts the maximum width of the video */
     height: auto;
     aspect-ratio: 16 / 9;
     border: none;
     border-radius: 12px;
     margin: 0 auto;
-    /* Centers the video horizontally */
 }
 
 
@@ -915,94 +905,72 @@ h2 {
 .scroll-to-contact {
     position: fixed;
     bottom: 2rem;
-    /* Adjusted to use rem for better scalability */
     right: 2rem;
-    /* Adjusted to use rem for better scalability */
     z-index: 1000;
     background-color: #00246B;
-    /* Dark Blue */
     border-radius: 50%;
     padding: 0.75rem;
-    /* Adjusted to use rem for better scalability */
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
-    /* Enhanced shadow for better visibility */
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .scroll-to-contact a {
     color: #fff;
-    /* White */
     font-size: 1.5rem;
-    /* Adjusted to use rem for better scalability */
     text-decoration: none;
     display: block;
 }
 
 .scroll-to-contact:hover {
     background-color: #4a90e2;
-    /* Light Blue */
     transform: translateY(-0.5rem);
-    /* Slight upward motion */
 }
 
 .scroll-to-contact a:hover {
     color: #f0f0f0;
-    /* Light Grey */
 }
 
 a {
     color: #0044cc;
-    /* Dark blue for light backgrounds */
     text-decoration: underline;
-    /* Underline links for better visibility */
 }
 
-/* Adjust contact-info section text */
 div.contact-info {
     color: #333333;
-    /* Dark gray for light backgrounds */
 }
 
 
 /* Footer Styling */
 footer {
     background-color: #19191a;
-    /* Black */
     color: #ffffff;
-    /* Light Grey */
     padding: 2.5rem 1rem;
-    /* Adjusted to use rem for better scalability */
     text-align: center;
     border-top: 0.5rem solid #4a90e2;
-    /* Dark Blue accent border */
 }
 
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
-    /* Added padding for responsiveness */
 }
 
 .footer-info,
 .footer-branding {
     margin-bottom: 1rem;
-    /* Adjusted to use rem for better scalability */
 }
 
 .footer-info p,
 .footer-branding p {
     margin: 0;
     font-size: 1rem;
-    /* Adjusted to use rem for better scalability */
+
     line-height: 1.6;
-    /* Slightly increased line-height for readability */
 }
 
 .footer-info a,
 .footer-branding a {
     color: #00aaff;
-    /* Light Yellow */
     text-decoration: none;
 }
 
@@ -1013,7 +981,6 @@ footer {
 
 .heart {
     color: #ff0000;
-    /* White */
 }
 
 /* Utility Classes */
@@ -1035,13 +1002,11 @@ footer {
 
 .error {
     border: 2px solid #4a90e2;
-    /* Error border color */
 }
 
 input.error,
 textarea.error {
     background-color: #fdd;
-    /* Light red background for error fields */
 }
 
 /* Scroll Progress Bar */
@@ -1052,7 +1017,6 @@ textarea.error {
     width: 0%;
     height: 5px;
     background-color: #00246B;
-    /* Matches your color scheme */
     z-index: 100;
     transition: width 0.2s ease-out;
 }
@@ -1069,16 +1033,13 @@ textarea.error {
 .scroll-down a {
     color: #fcfcfc;
     font-size: 2.5rem;
-    /* Responsive font size */
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .scroll-down a:hover {
     color: #00246B;
-    /* Change color on hover */
     transform: translateY(0.5rem);
-    /* Move down slightly */
 }
 
 /* Custom Scrollbar Styling */
@@ -1095,12 +1056,10 @@ textarea.error {
     background-color: #00246B;
     border-radius: 10px;
     border: 3px solid #f1f1f1;
-    /* Border around the thumb */
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background-color: #e04c29;
-    /* Darker color on hover */
 }
 
 /* Firefox Scrollbar */
@@ -1113,13 +1072,11 @@ html {
 @media (max-width: 600px) {
     .scroll-down a {
         font-size: 2rem;
-        /* Adjusted font size for smaller screens */
     }
 }
 
 @media (max-width: 400px) {
     .scroll-down a {
         font-size: 1.5rem;
-        /* Further adjusted font size for very small screens */
     }
 }
