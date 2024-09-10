@@ -7,7 +7,7 @@
     <title>Success Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="description" content="Your message has been successfully sent.">
-    <meta name="theme-color" content="#00ff26">
+    <meta name="theme-color" content="#82e07d">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://typeblitz.tech/success-page">
 
@@ -45,6 +45,9 @@
 
         .loader-wrapper {
             background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .loader {
@@ -67,11 +70,11 @@
         }
 
         @keyframes spin {
-            0% {
+            from {
                 transform: rotate(0deg);
             }
 
-            100% {
+            to {
                 transform: rotate(360deg);
             }
         }
@@ -110,10 +113,7 @@
                 loaderWrapper.style.display = 'flex';
                 setTimeout(() => {
                     window.location.href = 'https://jamalmadmaths.netlify.app/';
-                    setTimeout(() => {
-                        window.location.href = 'https://jamalmadmaths.netlify.app/';
-                    }, 5000);
-                }, 4000);
+                }, 5000);
             }, 4000);
         });
     </script>
