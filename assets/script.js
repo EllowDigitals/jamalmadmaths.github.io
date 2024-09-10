@@ -11,20 +11,55 @@ const animateColors = () => {
 // Function to set a random background video
 const setRandomBackgroundVideo = () => {
     const videos = [
-        '/assets/video0.mp4', // Replace with actual video URLs
-        '/assets/video1.mp4',
-        '/assets/video2.mp4'
+        '/assets/bgvideo0.mp4', // Replace with actual video URLs
+        '/assets/bgvideo1.mp4',
+        '/assets/bgvideo2.mp4'
     ];
-    
-    // Randomly select one video
-    const randomVideo = videos[Math.floor(Math.random() * videos.length)];
-    
-    // Set the source of the video element
+
     const videoElement = document.getElementById('bg-video');
+
+    // Prevent selecting the same video consecutively
+    let lastVideo = videoElement.getAttribute('src');
+    let randomVideo;
+    do {
+        randomVideo = videos[Math.floor(Math.random() * videos.length)];
+    } while (randomVideo === lastVideo);
+
+    // Set the source of the video element
     if (videoElement) {
         videoElement.src = randomVideo;
+        videoElement.load(); // Ensures the new video is loaded
         videoElement.play();
+
+        // Handle video loading error
+        videoElement.onerror = () => {
+            console.error('Video failed to load, falling back to default.');
+            videoElement.src = '/assets/defaultvideo.mp4'; // Replace with your default fallback
+            videoElement.play();
+        };
     }
+};
+
+// Throttle function to improve scroll event performance
+const throttle = (func, limit) => {
+    let lastFunc;
+    let lastRan;
+    return function () {
+        const context = this;
+        const args = arguments;
+        if (!lastRan) {
+            func.apply(context, args);
+            lastRan = Date.now();
+        } else {
+            clearTimeout(lastFunc);
+            lastFunc = setTimeout(function () {
+                if (Date.now() - lastRan >= limit) {
+                    func.apply(context, args);
+                    lastRan = Date.now();
+                }
+            }, limit - (Date.now() - lastRan));
+        }
+    };
 };
 
 // Document ready event
@@ -50,9 +85,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Check on page load and on scroll
+    // Check on page load and on scroll (throttled for performance)
     checkScroll();
-    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('scroll', throttle(checkScroll, 100));
 
     // Animate pixel colors at regular intervals
     animateColors(); // Initial color animation
@@ -85,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Scroll button for dynamic scrolling direction
     const scrollButton = document.getElementById('scroll-button');
     if (scrollButton) {
-        window.addEventListener('scroll', () => {
+        window.addEventListener('scroll', throttle(() => {
             const scrollPosition = window.scrollY;
             const documentHeight = document.documentElement.scrollHeight;
             const windowHeight = window.innerHeight;
@@ -99,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 scrollButton.href = '#contact';
                 scrollButton.innerHTML = '<i class="fas fa-arrow-down"></i>';
             }
-        });
+        }, 100));
 
         // Smooth scroll to top when clicking the "up" arrow
         scrollButton.addEventListener('click', function (e) {
@@ -153,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Function to update the scroll progress bar width
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', throttle(() => {
         const scrollProgress = document.getElementById('scrollProgress');
         if (scrollProgress) {
             const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
@@ -161,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const scrollPercentage = (scrollTop / scrollHeight) * 100;
             scrollProgress.style.width = scrollPercentage + '%';
         }
-    });
+    }, 50));
 });
 
 // Wait for the page to fully load
