@@ -8,11 +8,33 @@ const animateColors = () => {
     });
 };
 
+// Function to set a random background video
+const setRandomBackgroundVideo = () => {
+    const videos = [
+        '/assets/video0.mp4', // Replace with actual video URLs
+        '/assets/video1.mp4',
+        '/assets/video2.mp4'
+    ];
+    
+    // Randomly select one video
+    const randomVideo = videos[Math.floor(Math.random() * videos.length)];
+    
+    // Set the source of the video element
+    const videoElement = document.getElementById('bg-video');
+    if (videoElement) {
+        videoElement.src = randomVideo;
+        videoElement.play();
+    }
+};
+
 // Document ready event
 document.addEventListener('DOMContentLoaded', function () {
     const scrollToContact = document.querySelector('.scroll-to-contact');
     const scrollProgress = document.getElementById('scrollProgress');
     const header = document.querySelector('header');
+
+    // Set a random background video on page load
+    setRandomBackgroundVideo();
 
     // Function to check if the user has scrolled past the header
     function checkScroll() {
